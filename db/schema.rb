@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_06_27_135006) do
+ActiveRecord::Schema[7.0].define(version: 2022_06_27_142025) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -47,6 +47,21 @@ ActiveRecord::Schema[7.0].define(version: 2022_06_27_135006) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "taggables", force: :cascade do |t|
+    t.bigint "post_id", null: false
+    t.bigint "tag_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["post_id"], name: "index_taggables_on_post_id"
+    t.index ["tag_id"], name: "index_taggables_on_tag_id"
+  end
+
+  create_table "tags", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -60,4 +75,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_06_27_135006) do
   end
 
   add_foreign_key "likes", "users"
+  add_foreign_key "taggables", "posts"
+  add_foreign_key "taggables", "tags"
 end
