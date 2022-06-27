@@ -10,6 +10,7 @@ User.destroy_all
 
 10.times do |r|
   user = User.create!(
+    # name: "Pierre",
     email: "a#{r}@yopmail.com",
     password: 'aaaaaa'
     );
