@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :tags
+  resources :posts
   get 'user/index'
   get 'user/show'
   devise_for :users,
