@@ -56,3 +56,4 @@ gem 'table_print'
 gem 'better_errors'
 gem 'postman-ruby', '~> 0.1.0'
 gem "binding_of_caller"
+gem "bcrypt"

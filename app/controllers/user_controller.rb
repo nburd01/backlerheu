@@ -5,7 +5,19 @@ class UserController < ApplicationController
   end
 
   def index
-    @user = User.all
-    render json: @user
+    @users = User.all
+    render json: @users
+  end
+
+  def create
+    @user = User.create(user_params)
+
+    render json: @user, status: :created
+  end
+
+  private
+
+  def user_params
+      params.require(:user).permit(:email, :encrypted_password)
   end
 end

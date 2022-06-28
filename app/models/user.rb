@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-
+	has_secure_password
 	after_create :welcome_send
 
 	def welcome_send
