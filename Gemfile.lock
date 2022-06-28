@@ -236,6 +236,7 @@ PLATFORMS
   x86_64-linux
 
 DEPENDENCIES
+  bcrypt
   better_errors
   binding_of_caller
   bootsnap
