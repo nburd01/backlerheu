@@ -3,6 +3,8 @@ Rails.application.routes.draw do
   resources :posts
   get 'user/index'
   get 'user/show'
+  get 'post/index'
+  get 'post/show'
   devise_for :users,
              controllers: {
                sessions: 'users/sessions',
