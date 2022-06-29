@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :sends
+  resources :receives
   resources :tags
   resources :posts
   get 'user/index'
