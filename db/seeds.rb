@@ -16,12 +16,9 @@ User.destroy_all
 
 end
 
-Discipline.destroy_all
-
-10.times do |r|
-  discipline = Discipline.create!(
-    name: "a#{r}_test",
-    description: 'aaaaaa'
-    );
-
-end
+Discipline.create(name: 'football');
+Discipline.create(name: 'beach soccer');
+Discipline.create(name: 'futsal');
+Discipline.create(name: 'fitfoot');
+Discipline.create(name: 'féminines');
+Discipline.create(name: 'arbitrage')
