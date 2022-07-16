@@ -1,12 +1,8 @@
 Rails.application.routes.draw do
-  resources :sends
-  resources :receives
   resources :tags
   resources :posts
-  get 'user/index'
-  get 'user/show'
-  get 'post/index'
-  get 'post/show'
+  resources :disciplines
+
   devise_for :users,
              controllers: {
                sessions: 'users/sessions',

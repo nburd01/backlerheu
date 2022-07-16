@@ -15,3 +15,13 @@ User.destroy_all
     );
 
 end
+
+Discipline.destroy_all
+
+10.times do |r|
+  discipline = Discipline.create!(
+    name: "a#{r}_test",
+    description: 'aaaaaa'
+    );
+
+end
