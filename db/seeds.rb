@@ -8,11 +8,20 @@
 
 User.destroy_all
 Discipline.destroy_all
+Post.destroy_all
 
 10.times do |r|
   user = User.create!(
     email: "a#{r}@yopmail.com",
     password: 'aaaaaa'
+    );
+
+
+  post = Post.create!(
+    title: "Post title #{r}",
+    content: 'aaaaaa',
+    created_at: 'aaaaaa',
+    post_url: 'https://s3.static-footeo.com/1200/uploads/sclerheu/gallery/72709234_2411099205648659_1072033552297623552_o__pz6mhj.jpg'
     );
 
 end
