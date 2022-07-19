@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_07_16_094639) do
+ActiveRecord::Schema[7.0].define(version: 2022_07_19_142223) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -20,7 +20,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_07_16_094639) do
     t.string "commentable_type"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "category_id"
     t.integer "user_id"
   end
 
@@ -38,6 +37,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_07_16_094639) do
     t.text "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "img_url"
+    t.string "discipline_img"
   end
 
   create_table "jwt_denylist", force: :cascade do |t|
@@ -65,6 +66,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_07_16_094639) do
     t.datetime "updated_at", null: false
     t.integer "user_id"
     t.integer "tag_id"
+    t.string "post_url"
   end
 
   create_table "receives", force: :cascade do |t|
@@ -106,6 +108,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_07_16_094639) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "role"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
