@@ -15,7 +15,7 @@ class PostsController < ApplicationController
   # POST /posts
   def create
     @post = Post.new(post_params.except(:tags))
-    create_or_delete_posts_tags(@post, params[:post],[:tags],)
+    # create_or_delete_posts_tags(@post, params[:post],[:tags],)
 
     if @post.save
       render json: @post, status: :created, location: @post
@@ -27,7 +27,7 @@ class PostsController < ApplicationController
   # PATCH/PUT /posts/1
   def update
     if @post.update(post_params.except(:tags))
-    create_or_delete_posts_tags(@post, params[:post],[:tags],)
+    # create_or_delete_posts_tags(@post, params[:post],[:tags],)
 
       render json: @post
     else
@@ -46,13 +46,13 @@ class PostsController < ApplicationController
       @post = Post.find(params[:id])
     end
 
-    def create_or_delete_posts_tags(post,tags)
-      post.taggables.destroy_all
-      tags = tags.strip.split(',')
-      tags.each do|tag|
-        post.tags << Tag.find_or_create_by(name: tag)
-      end
-    end
+    # def create_or_delete_posts_tags(post,tags)
+    #   post.taggables.destroy_all
+    #   tags = tags.strip.split(',')
+    #   tags.each do|tag|
+    #     post.tags << Tag.find_or_create_by(name: tag)
+    #   end
+    # end
 
 
     # Only allow a list of trusted parameters through.
