@@ -1,4 +1,6 @@
 class DisciplinesController < ApplicationController
+  before_action :set_discipline, only: %i[ show update destroy ]
+  
   def index
     @disciplines = Discipline.all
     render json: @disciplines
